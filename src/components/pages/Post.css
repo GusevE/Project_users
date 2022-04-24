@@ -1,0 +1,36 @@
+h2{
+    padding-left: 20px;
+}
+.form{
+    background: #fff;
+}
+
+.item{
+ float: left;
+ margin-right:20px;
+}
+input, label, textarea {
+    display:block;
+}
+label{
+    padding: 10px;
+}
+.buttom{
+    margin-top:  20px;
+    margin-bottom: 20px;
+}
+.editForm{
+    top: 10px;
+    color: #fff;
+    right: 33px;
+    position: absolute;
+    background-color: blueviolet;
+    border-radius: 5px;
+}
+.container{
+    position: relative;
+}
+.submit{
+    cursor: pointer;
+    border: 1px solid ;
+}

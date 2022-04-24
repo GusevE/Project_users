@@ -1,0 +1,14 @@
+.pagination{
+    display: flex;
+
+}
+.item{
+    padding-left: 10px;
+}
+button{
+    padding: 20px;
+    border-radius: 50px;
+}
+button:hover{
+    background-color: brown;
+}
