@@ -1,5 +1,5 @@
 import './NoUsers.css'
-export default () =>{
+function NoUsers (){
 
 
     return(
@@ -7,3 +7,4 @@ export default () =>{
         <h1>Нет пользователей</h1>
     )
 }
+export default NoUsers;

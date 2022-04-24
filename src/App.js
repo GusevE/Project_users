@@ -14,7 +14,7 @@ function App() {
       .then((json) => {
         dispatch({ type: 'DATA', paylod: json });
       });
-  }, []);
+  }, [dispatch]);
 
 
   return (
