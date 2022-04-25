@@ -15,7 +15,7 @@ function HomePages() {
 
   const [data, setData] = useState([]);
   const [currentPage, setcurrentPage] = useState(1);
-  const [countriesPerPage] = useState(4);
+  const [countriesPerPage] = useState(10);
   const pagination = (pageNumber) => setcurrentPage(pageNumber);
   const lastCountryIndex = currentPage * countriesPerPage;
   const firstCountryIndex = lastCountryIndex - countriesPerPage;
@@ -27,8 +27,8 @@ function HomePages() {
   return (
     <>
           <h1> Список пользователей</h1>
-      <SearchComponent />
-      <FilterComponent />
+      <SearchComponent filterData={filterData} />
+      <FilterComponent  />
       <UsersComponent data={currentCountry} />
       <Pagination countriesPerPage={countriesPerPage} totalCountry={filterData.length} pagination={pagination} />
     </>

@@ -1,0 +1,14 @@
+ul {
+    display: flex;
+    padding-left: 10px;
+}
+li{
+   list-style: none;
+   cursor: pointer;
+}
+.filter{
+    margin-left: 15px;
+}
+.quantity{
+    padding-left: 10px;
+}

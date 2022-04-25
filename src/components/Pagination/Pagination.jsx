@@ -12,8 +12,8 @@ function Pagination({countriesPerPage,totalCountry, pagination}){
 
       <div >
             <ul className="pagination">
-                {pageNumbers.map(number => (
-                        <li className="item">
+                {pageNumbers.map((number, i) => (
+                        <li key={i} className="item">
                        
                             <button onClick={() => pagination(number)}> { number}</button>
                         </li>

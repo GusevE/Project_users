@@ -6,6 +6,7 @@
     background-color: white;
     margin: 20px;
     border-radius: 10px;
+    padding-left: 16px;
 }
 input{
     width: 901px;
@@ -17,18 +18,13 @@ input{
 }
 .clear{
     padding-top: 24px;
-    padding-left: 15px;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 16px;  
    
 }
-button{
+.button{
     cursor: pointer;
-    border: none;
     background: white;
-}
-.search{
-    margin-left: 16px;
 }
