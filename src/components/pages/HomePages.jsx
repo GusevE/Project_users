@@ -15,7 +15,7 @@ function HomePages() {
 
   const [data, setData] = useState([]);
   const [currentPage, setcurrentPage] = useState(1);
-  const [countriesPerPage] = useState(10);
+  const [countriesPerPage] = useState(4);
   const pagination = (pageNumber) => setcurrentPage(pageNumber);
   const lastCountryIndex = currentPage * countriesPerPage;
   const firstCountryIndex = lastCountryIndex - countriesPerPage;
