@@ -13,35 +13,41 @@ function UsersContentComponent(props) {
   const handleRemoveItem = (id) => {
     const temp = [...state].filter((item) => item.id !== id);
     dispatch({ type: 'DATA', paylod: [...temp] });
-    setModalActive(false)
+    setModalActive(null);
   };
-  
-  const [modalActive, setModalActive] = useState(false)
 
+  const [modalActive, setModalActive] = useState(null);
 
   return (
     <>
       {data.map((item, idx) => {
         return (
-          <><div key={idx} className='container__header'>
-            <Link to={`/posts/${item.id}`}>
-              <div className='item user action'> {item.username}</div>
-            </Link>
-            <div> {item.address.city}</div>
-            <div>{item.company.name}</div>
-            <div> {item.email}</div>
-            <div onClick={() => setModalActive(true)} style={{ cursor: 'pointer' }}>
-              X
+          <>
+            <div key={idx} className='container__header'>
+              <Link to={`/posts/${item.id}`}>
+                <div className='item user action'> {item.username}</div>
+              </Link>
+              <div> {item.address.city}</div>
+              <div>{item.company.name}</div>
+              <div> {item.email}</div>
+              <div className='close' onClick={() => setModalActive(item)} style={{ cursor: 'pointer' }}>
+                X
+              </div>
             </div>
-          </div>
-         </>
+          </>
         );
       })}
-       <Modal active={modalActive} setActive={setModalActive}>
-              <p> Вы уверены, что хотите удалить пользователя?</p>
-              <button onClick={() => handleRemoveItem()}> Да</button>
-              <button  onClick={() => setModalActive(false)} > Нет</button>
-            </Modal>
+      <Modal active={!!modalActive} setActive={setModalActive}>
+        <p className='modal_text'> Вы уверены, что хотите удалить пользователя?</p>
+        <div className='buttom'>
+          <button className='btn' onClick={() => handleRemoveItem(modalActive.id)}>
+            Да
+          </button>
+          <button className='btn' onClick={() => setModalActive(false)}>
+            Нет
+          </button>
+        </div>
+      </Modal>
     </>
   );
 }

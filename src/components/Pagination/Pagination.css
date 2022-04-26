@@ -1,7 +1,10 @@
-.pagination{
-    display: flex;
-
+.pagination {
+  display: flex;
 }
-.item{
-    padding-left: 10px;
+.item {
+  padding-left: 10px;
+}
+.pagination_btn:hover {
+  background-color: antiquewhite;
+  cursor: pointer;
 }
