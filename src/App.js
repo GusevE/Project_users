@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import HomePages from './components/pages/HomePages';
@@ -15,6 +15,18 @@ function App() {
         dispatch({ type: 'DATA', paylod: json });
       });
   }, [dispatch]);
+
+
+
+    const [api, setApi] = useState;
+
+
+    useEffect(()=> {
+        fetch("http://api.openweathermap.org/data/2.5/weather")
+          .then((response) => response.json())
+          .then((data) => setApi(data))
+
+    })
 
 
   return (
