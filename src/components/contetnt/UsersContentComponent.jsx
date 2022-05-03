@@ -22,9 +22,8 @@ function UsersContentComponent(props) {
     <>
       {data.map((item, idx) => {
         return (
-          <>
             <div key={idx} className='container__header'>
-              <Link to={`/posts/${item.id}`}>
+              <Link   to={`/posts/${item.id}`}>
                 <div className='item user action'> {item.username}</div>
               </Link>
               <div> {item.address.city}</div>
@@ -34,7 +33,6 @@ function UsersContentComponent(props) {
                 X
               </div>
             </div>
-          </>
         );
       })}
       <Modal active={!!modalActive} setActive={setModalActive}>

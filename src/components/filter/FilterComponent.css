@@ -1,8 +1,17 @@
 .filter ul li{
     display: inline;
-    padding-left: 10px;
+    margin-left: 10px;
 }
 li{
    list-style: none;
-   cursor: pointer;
+   
+}
+.filter__action{
+    color: red;
+    border-bottom: 1px solid;
+    cursor: pointer;
+}
+.filter__pass{
+    color: black;
+    cursor: pointer;
 }

@@ -3,8 +3,7 @@ import { createStore } from 'redux'
 const initialState = {
     Data: [],
     Change: '',
-    Value: null,
-
+    Weather: [],
 }
 
 
@@ -14,7 +13,7 @@ const reducer = (state = initialState, action ) => {
         {
             case 'DATA': return {...state, Data :[...action.paylod]}
             case 'CHANGE': return { ...state, Change: action.payload }
-            case 'CHANGE_VALUE': return { ...state, Value: action.payload }
+            case 'WEATHER_DATA': return { ...state, Weather: action.payload }
             default: return state
         }
 

@@ -1,8 +1,7 @@
 .block{
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
     padding-top: 12px;
-    padding-bottom: 56px;
     background-color: white;
     margin: 20px;
     border-radius: 10px;

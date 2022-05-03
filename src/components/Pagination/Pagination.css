@@ -4,7 +4,13 @@
 .item {
   padding-left: 10px;
 }
-.pagination_btn:hover {
-  background-color: antiquewhite;
+.page, .currentPage{
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+.currentPage{
+  background: darkgray;
+  color: white;
+  border: 1px solid black;
 }

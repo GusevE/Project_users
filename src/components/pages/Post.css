@@ -21,11 +21,11 @@ label{
 }
 .editForm{
     top: 10px;
-    color: #fff;
     right: 33px;
+    padding: 10px;
     position: absolute;
-    background-color: blueviolet;
     border-radius: 5px;
+    cursor: pointer;
 }
 .container{
     position: relative;
