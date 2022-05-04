@@ -26,30 +26,10 @@ function HomePages() {
   );
   const currentCountry = filterData.slice(firstUsersIndex, lastUsersIndex);
 
-  const [latitude, setlatitude] = useState(83.0855165);
-  const [longitude, setlongitude] = useState(54.8690551);
-  const getLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(getCoordinats);
-    } else {
-      alert("Геолакация не поддержвается Вашим браузером");
-    }
-  };
-
-  function getCoordinats(position) {
-    setlatitude(position.coords.latitude);
-    setlongitude(position.coords.longitude);
-  }
-  getLocation();
-
   return (
     <>
       <h1> Список пользователей</h1>
-      <SearchComponent
-        filterData={filterData}
-        latitude={latitude}
-        longitude={longitude}
-      />
+      <SearchComponent filterData={filterData} />
       <FilterComponent />
       <UsersComponent data={currentCountry} />
       <Pagination

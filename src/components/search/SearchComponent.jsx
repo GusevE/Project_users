@@ -4,7 +4,7 @@ import Loading from "../Loading/Loading";
 import styles from "../search/SearchComponent.module.css";
 import Weather from "../Weather/Weather";
 
-function SearchComponent({ filterData, latitude, longitude }) {
+function SearchComponent({ filterData }) {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.Data);
   const API_KEY = "bd10066a0d6afcc406117b703fa1aa4f";
@@ -26,11 +26,29 @@ function SearchComponent({ filterData, latitude, longitude }) {
   function clearFn() {
     setEnteredText("");
   }
+  const [latitude, setlatitude] = useState();
+  const [longitude, setlongitude] = useState();
+  const getLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(getCoordinats);
+    } else {
+      alert("Геолакация не поддержвается Вашим браузером");
+    }
+  };
+
+  function getCoordinats(position) {
+    setlatitude(position.coords.latitude);
+    setlongitude(position.coords.longitude);
+  }
+  getLocation();
 
   useEffect(() => {
+    if (!latitude || !longitude) {
+      return;
+    }
     async function exampleFetch() {
       const response = await fetch(
-        `http://api.openweathermap.org/geo/1.0/reverse?lat=${longitude}&lon=${latitude}&limit=${1}&appid=${API_KEY}`
+        `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=${1}&appid=${API_KEY}`
       );
       const json = await response.json();
       const result = await fetch(
